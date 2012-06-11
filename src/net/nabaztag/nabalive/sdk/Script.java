@@ -28,8 +28,8 @@ public class Script {
 	    java.sql.Connection mysql = DriverManager.getConnection("jdbc:mysql://localhost/nabaztag?"+ "user=username&password=password");
 	    System.out.println("Connecting to mysql...");
 	    Statement statement = mysql.createStatement();
-	    System.out.println("Mysql query: SELECT * FROM `table` WHERE `field` = "+instanceID);
-	    ResultSet rs = statement.executeQuery("select * from table where field = '"+instanceID+"'");
+	    System.out.println("Mysql query: SELECT * FROM `app` WHERE `instanceID` = "+instanceID);
+	    ResultSet rs = statement.executeQuery("select * from app where instanceid = '"+instanceID+"'");
 	    rs.next();
 		
 	    if (rs.getString("apiKey") != null || rs.getString("apiKey") != "") {
